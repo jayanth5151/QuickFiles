@@ -1,11 +1,11 @@
 {
-  "name": "filemanager-app",
+  "name": "QuickFiles-frontend-app",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o",
-    "build": "ng build",
+    "start": "ng serve",
+    "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -18,10 +18,6 @@
     "@angular/platform-browser": "19.2.15",
     "@angular/platform-browser-dynamic": "19.2.15",
     "@angular/router": "19.2.15",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "mongoose": "^8.18.2",
-    "multer": "^2.0.2",
     "rxjs": "^7.8.2",
     "zone.js": "~0.15.1"
   },
