@@ -1,12 +1,11 @@
 <div class="home-container">
-  <aside class="sidebar">
-    <div class="brand">
-      <h1>QuickFiles</h1>
-    </div>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><h1>QuickFiles</h1></div>
     <nav>
       <ul>
-        <li class="navigation-btn"><a routerLink="upload" routerLinkActive="active">Upload File</a></li>
-        <li class="navigation-btn"><a routerLink="download" routerLinkActive="active">Download File</a></li>
+        <li><a routerLink="upload" routerLinkActive="active">Upload File</a></li>
+        <li><a routerLink="download" routerLinkActive="active">Download File</a></li>
       </ul>
     </nav>
     <footer class="sidebar-footer">
@@ -14,10 +13,15 @@
     </footer>
   </aside>
 
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Main content -->
   <main class="content">
     <header class="content-header">
+      <span class="hamburger" id="hamburger">&#9776;</span>
+      <h2>QuickFiles Home</h2>
     </header>
-
     <section class="content-body">
       <router-outlet></router-outlet>
     </section>

@@ -1,158 +1,135 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f8f9fa;
-  overflow: hidden;
-}
+    /* ===== Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fa;
+    }
 
-.home-container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
+    /* ===== Home container ===== */
+    .home-container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+    }
 
-/* Sidebar */
-.sidebar {
-  width: 240px;
-  /* default for desktop */
-  background: linear-gradient(180deg, #2c3e50, #34495e);
-  color: #ecf0f1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s ease;
-}
+    /* ===== Sidebar ===== */
+    .sidebar {
+      width: 240px;
+      background: linear-gradient(180deg, #2c3e50, #34495e);
+      color: #ecf0f1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      box-shadow: 4px 0 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+    .sidebar h1 {
+      margin-bottom: 50px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #4caf50;
+      text-align: center;
+    }
+    .sidebar nav { flex: 1; }
+    .sidebar nav ul { list-style: none; }
+    .sidebar nav ul li { margin-bottom: 20px; }
+    .sidebar nav ul li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      padding: 12px 16px;
+      display: block;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .sidebar nav ul li a:hover, .sidebar nav ul li a.active {
+      background-color: #4caf50;
+      color: white;
+      transform: translateX(5px);
+    }
+    .sidebar-footer { margin-top: auto; }
+    .sidebar .signout-btn {
+      background: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .sidebar .signout-btn:hover { background-color: #e74c3c; color: #fff; }
 
-.sidebar h1 {
-  margin-bottom: 50px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #4caf50;
-  text-align: center;
-  letter-spacing: 1px;
-}
+    /* ===== Content ===== */
+    .content {
+      margin-left: 240px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      background: #fff;
+      transition: margin-left 0.3s ease;
+    }
+    .content-header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 80px;
+      background: #f1f3f6;
+      border-bottom: 1px solid #ddd;
+      padding: 0 20px;
+    }
+    .content-header h2 { font-size: 1.6rem; color: #2c3e50; font-weight: 600; }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    .content-body { flex: 1; padding: 20px; background: #fafafa; }
 
-/* Nav links */
-.sidebar nav ul {
-  list-style: none;
-  flex: 1;
-}
+    /* ===== Mobile ===== */
+    @media (max-width: 600px) {
+      .sidebar {
+        width: 70%;
+        max-width: 200px;
+        transform: translateX(-100%);
+      }
+      .sidebar.show { transform: translateX(0); }
 
-.sidebar nav ul li {
-  margin-bottom: 20px;
-}
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 50;
+        display: none;
+      }
+      .overlay.show { display: block; }
 
-.sidebar nav ul li a {
-  color: #ecf0f1;
-  text-decoration: none;
-  padding: 12px 16px;
-  display: block;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
+      .hamburger { display: block; }
+      .content { margin-left: 0; }
 
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a.active {
-  background-color: #4caf50;
-  color: white;
-  transform: translateX(5px);
-}
+      .sidebar h1 { font-size: 1rem; margin-bottom: 20px; }
+      .sidebar nav ul li a { font-size: 0.8rem; padding: 10px; text-align: left; }
+      .sidebar .signout-btn { padding: 10px; font-size: 0.8rem; }
 
-/* Sign-out button */
-.sidebar .signout-btn {
-  margin-top: auto;
-  background: #fff;
-  border: none;
-  padding: 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.sidebar .signout-btn:hover {
-  background-color: #e74c3c;
-  color: #fff;
-}
-
-/* Content (push right by sidebar width) */
-.content {
-  margin-left: 240px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  background: #fff;
-  transition: margin-left 0.3s ease;
-}
-
-/* Header */
-.content-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  background: #f1f3f6;
-  border-bottom: 1px solid #ddd;
-}
-
-.content-header h2 {
-  font-size: 1.6rem;
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-/* Body */
-.content-body {
-  flex: 1;
-  padding: 20px;
-  background: #fafafa;
-}
-
-/* Mobile: sidebar = 10% of screen */
-@media (max-width: 600px) {
-  .sidebar {
-    width: 30vw;
-    /* 10% of viewport width */
-    padding: 10px 5px;
-    align-items: center;
-    /* center icons/text */
-  }
-
-  .content {
-    margin-left: 10vw;
-  }
-
-  .sidebar h1 {
-    font-size: 0.8rem;
-    margin-bottom: 20px;
-  }
-
-  .sidebar nav ul li a {
-    font-size: 0.7rem;
-    padding: 8px;
-    text-align: center;
-    white-space: nowrap;
-    /* avoid wrapping */
-  }
-
-  .sidebar .signout-btn {
-    padding: 8px;
-    font-size: 0.7rem;
-  }
-}
+      .content-header h2 { font-size: 1.2rem; }
+      .content-body { padding: 10px; }
+    }
+  
