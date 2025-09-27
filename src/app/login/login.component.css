@@ -1,6 +1,7 @@
 /* Center the container */
 .login-container {
   width: 360px;
+  max-width: 90%;
   margin: 80px auto;
   padding: 40px 30px;
   background: linear-gradient(145deg, #ffffff, #f1f3f6);
@@ -8,6 +9,7 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
 }
 
 /* Title and subtitle */
@@ -30,6 +32,7 @@
   width: 100%;
   padding: 14px 15px;
   margin-bottom: 20px;
+  margin-right: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   outline: none;
@@ -89,10 +92,54 @@
   font-weight: 500;
 }
 
-/* Responsive */
-@media (max-width: 400px) {
+/* ===== Responsive for tablets ===== */
+@media (max-width: 768px) {
   .login-container {
-    width: 90%;
+    width: 400px;
+    margin: 60px auto;
+    padding: 35px 25px;
+  }
+
+  .login-container h1 {
+    font-size: 26px;
+  }
+
+  .login-container .login-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* ===== Responsive for mobile ===== */
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    margin: 40px auto;
     padding: 30px 20px;
+  }
+
+  .login-container h1 {
+    font-size: 24px;
+  }
+
+  .login-container .subtitle {
+    font-size: 13px;
+  }
+
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    padding: 12px 12px;
+    font-size: 13px;
+  }
+
+  .login-container .login-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .login-container .signup-btn {
+    width: 100px;
+    padding: 6px;
+    font-size: 13px;
   }
 }
