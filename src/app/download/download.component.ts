@@ -21,7 +21,7 @@ export class DownloadComponent implements OnInit {
 
   loadFiles() {
     this.http
-      .get('http://localhost:5000/files', {
+      .get('https://quickfiles.onrender.com/files', {
         headers: { Authorization: `Bearer ${this.auth.getToken()}` },
       })
       .subscribe({
@@ -37,7 +37,7 @@ export class DownloadComponent implements OnInit {
     console.log('Downloading file ID:', fileId);
 
     this.http
-      .get(`http://localhost:5000/download/${fileId}`, {
+      .get(`https://quickfiles.onrender.com/download/${fileId}`, {
         headers: { Authorization: `Bearer ${this.auth.getToken()}` },
         responseType: 'blob',
       })
@@ -57,7 +57,7 @@ export class DownloadComponent implements OnInit {
     if (!confirm('Are you sure you want to delete this file?')) return;
 
     this.http
-      .delete(`http://localhost:5000/delete/${fileId}`, {
+      .delete(`https://quickfiles.onrender.com/delete/${fileId}`, {
         headers: { Authorization: `Bearer ${this.auth.getToken()}` },
       })
       .subscribe({
