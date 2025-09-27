@@ -31,8 +31,6 @@ export class SignupComponent {
         this.signupEmail = '';
         this.signupPassword = '';
         this.router.navigate(['/login']); // redirect to login page
-
-
       },
       error: (err) => alert(err.error?.message || 'Signup failed'),
     });
