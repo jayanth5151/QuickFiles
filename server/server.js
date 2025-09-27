@@ -147,11 +147,12 @@ app.delete("/delete/:id", authMiddleware, async (req, res) => {
   }
 });
 
-// Serve Angular static files
-app.use(express.static(path.join(__dirname, '../dist/quickfiles-app')));
+// // Serve Angular static files
+// app.use(express.static(path.join(__dirname, '../dist/quickfiles-app')));
 
-// Catch all other routes and return index.html
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/quickfiles-app/index.html'));
-});
+// // Catch all other routes and return index.html
+// app.get(/.*/, (req, res) => {
+//   res.sendFile(path.join(__dirname, '../dist/quickfiles-app/index.html'));
+// });
+
 app.listen(5000, () => console.log("Server Started Running"));
