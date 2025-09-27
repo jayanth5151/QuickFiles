@@ -144,8 +144,10 @@ app.delete("/delete/:id", authMiddleware, async (req, res) => {
 // Serve Angular frontend
 app.use(express.static(path.join(__dirname, 'dist/quickfiles-app')));
 
-app.get('*', (req, res) => {
+// Catch-all route for Angular routing
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/quickfiles-app/index.html'));
 });
 
-app.listen(5000, () => console.log("Server running on http://localhost:5000"));
+
+app.listen(5000, () => console.log("Server Started Running"));
