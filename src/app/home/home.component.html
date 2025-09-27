@@ -1,0 +1,27 @@
+<div class="home-container">
+  <aside class="sidebar">
+    <div class="brand">
+      <h1>QuickWork</h1>
+    </div>
+    <nav>
+      <ul>
+        <li class ="navigation-btn"><a routerLink="upload" routerLinkActive="active">Upload File</a></li>
+        <li class ="navigation-btn"><a routerLink="download" routerLinkActive="active">Download File</a></li>
+      </ul>
+    </nav>
+    <footer class="sidebar-footer">
+            <button class="signout-btn" (click)="onLogout()">Log Out</button>
+
+    </footer>
+  </aside>
+
+  <main class="content">
+    <header class="content-header">
+      <h2>Welcome to FileManager App !</h2>
+    </header>
+
+    <section class="content-body">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>
