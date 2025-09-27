@@ -141,12 +141,12 @@ app.delete("/delete/:id", authMiddleware, async (req, res) => {
   }
 });
 
-// Serve Angular frontend
-app.use(express.static(path.join(__dirname, 'dist/quickfiles-app')));
+// Serve Angular static files
+app.use(express.static(path.join(__dirname, '../dist/quickfiles-app')));
 
 // Catch-all route for Angular routing
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/quickfiles-app/index.html'));
+app.get(/^\/.*$/, (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/quickfiles-app/index.html'));
 });
 
 
