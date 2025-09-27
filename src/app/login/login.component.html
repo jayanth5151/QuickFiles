@@ -1,5 +1,7 @@
 <div class="login-container" onload="logout()">
-  <h2>Login</h2>
+  <h1>Welcome to QuickFiles</h1>
+  <p class="subtitle">Please login to continue</p>
+
   <form (ngSubmit)="login()">
     <input
       type="text"
@@ -15,11 +17,12 @@
       placeholder="Password"
       required
     />
-    <button type="submit">Login</button>
+    <button type="submit" class="login-btn">Login</button>
   </form>
 
-  <h4>OR</h4>
+  <p class="or-text">OR</p>
+
   <form routerLink="/signup">
-    <button type="submit">Signup</button>
+    <button type="submit" class="signup-btn">Signup</button>
   </form>
 </div>

@@ -1,62 +1,98 @@
-/* Center the container on the page */
+/* Center the container */
 .login-container {
-  width: 350px;
-  margin: 100px auto;
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: linear-gradient(145deg, #ffffff, #f1f3f6);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Title styling */
-.login-container h2 {
-  margin-bottom: 30px;
+/* Title and subtitle */
+.login-container h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
   color: #333333;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.login-container .subtitle {
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #777777;
 }
 
 /* Input fields styling */
 .login-container input[type="text"],
 .login-container input[type="password"] {
   width: 100%;
-  padding: 12px 15px;
+  padding: 14px 15px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   outline: none;
+  font-size: 14px;
   transition: 0.3s;
 }
 
 .login-container input[type="text"]:focus,
 .login-container input[type="password"]:focus {
   border-color: #4caf50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
 }
 
-/* Button styling */
-.login-container button {
+/* Buttons styling */
+.login-container .login-btn {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background-color: #4caf50;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #fff;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.login-container button:hover {
+.login-container .login-btn:hover {
   background-color: #45a049;
   transform: translateY(-2px);
+}
+
+/* Smaller signup button */
+.login-container .signup-btn {
+  width: 120px;
+  padding: 8px;
+  background-color: transparent;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  color: #4caf50;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-container .signup-btn:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* "OR" text */
+.login-container .or-text {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #999999;
+  font-weight: 500;
 }
 
 /* Responsive */
 @media (max-width: 400px) {
   .login-container {
     width: 90%;
-    padding: 30px;
+    padding: 30px 20px;
   }
 }
