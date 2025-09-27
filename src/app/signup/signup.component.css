@@ -1,62 +1,144 @@
-/* Center the container on the page */
 .login-container {
-  width: 350px;
-  margin: 100px auto;
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  max-width: 90%;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: linear-gradient(145deg, #ffffff, #f1f3f6);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
 }
 
-/* Title styling */
-.login-container h2 {
-  margin-bottom: 30px;
+/* Title and subtitle */
+.login-container h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
   color: #333333;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.login-container .subtitle {
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #777777;
 }
 
 /* Input fields styling */
 .login-container input[type="text"],
 .login-container input[type="password"] {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
+  width: 80%;
+  padding: 10px;
+  margin: 5px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   outline: none;
+  font-size: 14px;
   transition: 0.3s;
 }
 
 .login-container input[type="text"]:focus,
 .login-container input[type="password"]:focus {
   border-color: #4caf50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
 }
 
-/* Button styling */
-.login-container button {
-  width: 100%;
-  padding: 12px;
+/* Buttons styling */
+.login-container .login-btn {
+  width: 86%;
+  padding: 8px;
   background-color: #4caf50;
   border: none;
-  border-radius: 8px;
+  margin-top: 20px;
+  border-radius: 10px;
   color: #fff;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.login-container button:hover {
+.login-container .login-btn:hover {
   background-color: #45a049;
   transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 400px) {
+/* Smaller navigation button */
+.login-container .signup-btn {
+  width: 120px;
+  padding: 8px;
+  background-color: transparent;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  color: #4caf50;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-container .signup-btn:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* "OR" text */
+.login-container .or-text {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #999999;
+  font-weight: 500;
+}
+
+/* ===== Responsive for tablets ===== */
+@media (max-width: 768px) {
   .login-container {
-    width: 90%;
-    padding: 30px;
+    width: 400px;
+    margin: 60px auto;
+    padding: 35px 25px;
+  }
+
+  .login-container h1 {
+    font-size: 26px;
+  }
+
+  .login-container .login-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* ===== Responsive for mobile ===== */
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    margin: 40px auto;
+    padding: 30px 20px;
+  }
+
+  .login-container h1 {
+    font-size: 24px;
+  }
+
+  .login-container .subtitle {
+    font-size: 13px;
+  }
+
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    padding: 12px 12px;
+    font-size: 13px;
+  }
+
+  .login-container .login-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .login-container .signup-btn {
+    width: 100px;
+    padding: 6px;
+    font-size: 13px;
   }
 }
