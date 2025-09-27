@@ -58,7 +58,7 @@ export class UploadComponent {
   const formData = new FormData();
   formData.append("file", this.selectedFile);
 
-  this.http.post("http://localhost:5000/upload", formData, {
+  this.http.post("https://quickfiles.onrender.com/upload", formData, {
     headers: { Authorization: `Bearer ${this.auth.getToken()}` },
   }).subscribe({
     next: (res: any) => alert(res.message),
