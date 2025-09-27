@@ -8,6 +8,12 @@ const path = require('path');
 
 
 const app = express();
+
+app.use(cors({
+  origin: 'https://quickfiles-1.onrender.com', // Replace with your frontend Render URL
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(cors());
 
