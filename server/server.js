@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const multer = require("multer");
+const path = require('path');
+
 
 const app = express();
 app.use(express.json());
@@ -137,6 +139,14 @@ app.delete("/delete/:id", authMiddleware, async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "Failed to delete file" });
   }
+});
+
+// Serve Angular frontend
+app.use(express.static(path.join(__dirname, '../QuickFiles-frontend-app/dist/quickfiles-app')));
+
+// For all other routes, send Angular index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../QuickFiles-frontend-app/dist/quickfiles-app/index.html'));
 });
 
 
