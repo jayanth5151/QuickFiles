@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "filemanager-app": {
+    "quickfiles-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/filemanager-app",
+            "outputPath": "dist/quickfiles-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "filemanager-app:build:production"
+              "buildTarget": "quickfiles-app:build:production"
             },
             "development": {
-              "buildTarget": "filemanager-app:build:development"
+              "buildTarget": "quickfiles-app:build:development"
             }
           },
           "defaultConfiguration": "development"
