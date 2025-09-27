@@ -1,4 +1,4 @@
-/* Center the container */
+
 .login-container {
   width: 360px;
   max-width: 90%;
@@ -29,10 +29,9 @@
 /* Input fields styling */
 .login-container input[type="text"],
 .login-container input[type="password"] {
-  width: 100%;
-  padding: 14px 15px;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  width: 80%;
+  padding: 10px;
+  margin: 5px;
   border: 1px solid #ccc;
   border-radius: 10px;
   outline: none;
@@ -48,10 +47,11 @@
 
 /* Buttons styling */
 .login-container .login-btn {
-  width: 100%;
-  padding: 14px;
+  width: 86%;
+  padding: 8px;
   background-color: #4caf50;
   border: none;
+  margin-top: 20px;
   border-radius: 10px;
   color: #fff;
   font-size: 16px;
@@ -143,3 +143,4 @@
     font-size: 13px;
   }
 }
+
