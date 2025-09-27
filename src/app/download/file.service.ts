@@ -7,7 +7,7 @@ import { AuthService } from '../auth.service'; // import your AuthService
   providedIn: 'root'
 })
 export class FileService {
-  private baseUrl = 'http://localhost:5000';
+  private baseUrl = 'https://quickfiles.onrender.com';
 
   constructor(private http: HttpClient, private auth: AuthService) {}
 

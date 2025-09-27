@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private baseUrl = 'http://localhost:5000';
-    private tokenKey = 'auth_token'; // ✅ define key once
+  private baseUrl = 'https://quickfiles.onrender.com';
+  private tokenKey = 'auth_token'; // ✅ define key once
 
 
   constructor(private http: HttpClient) {}
