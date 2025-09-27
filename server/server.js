@@ -142,9 +142,9 @@ app.delete("/delete/:id", authMiddleware, async (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, '../dist/quickfiles-app')));
-app.get('*', (req, res) => {
+
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/quickfiles-app/index.html'));
 });
-
 
 app.listen(5000, () => console.log("Server Started Running"));
