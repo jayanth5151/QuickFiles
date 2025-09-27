@@ -1,115 +1,158 @@
-/* Global reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden; /* prevents scroll gaps */
+  background: #f8f9fa;
+  overflow: hidden;
 }
 
 .home-container {
   display: flex;
-  flex-direction: row;
-  width: 100vw;  /* full width */
-  height: 100vh; /* full height */
-}
-
-
-/* make children transparent so the black shows through */
-.home-container > .content {
-  background-color: transparent;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 250px;
-  background-color: hsl(210, 29%, 24%);
+  width: 240px;
+  /* default for desktop */
+  background: linear-gradient(180deg, #2c3e50, #34495e);
   color: #ecf0f1;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
 }
 
 .sidebar h1 {
-  margin-bottom: 60px;
-  font-size: 2rem;
+  margin-bottom: 50px;
+  font-size: 1.6rem;
+  font-weight: bold;
   color: #4caf50;
   text-align: center;
+  letter-spacing: 1px;
 }
 
-/* Navigation */
+/* Nav links */
 .sidebar nav ul {
   list-style: none;
-  padding: 0;
-  width: 100%;
-  flex: 1; /* takes remaining space */
+  flex: 1;
 }
 
 .sidebar nav ul li {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* Make nav links full width like signout */
 .sidebar nav ul li a {
   color: #ecf0f1;
   text-decoration: none;
-  padding: 12px 0;
+  padding: 12px 16px;
   display: block;
-  width: 100%;
-  text-align: center;  /* optional: center text */
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .sidebar nav ul li a:hover,
 .sidebar nav ul li a.active {
   background-color: #4caf50;
+  color: white;
+  transform: translateX(5px);
 }
 
-/* Sign-out button at bottom (same width as nav links) */
+/* Sign-out button */
 .sidebar .signout-btn {
-  position: absolute;
-  bottom: 30px;
-  left: 20px;
-  background-color: white;
-  right: 20px;
-  width: calc(100% - 40px); /* matches sidebar padding */
+  margin-top: auto;
+  background: #fff;
   border: none;
-  padding: 12px 0;
+  padding: 12px;
   border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .sidebar .signout-btn:hover {
   background-color: #e74c3c;
+  color: #fff;
 }
 
-/* Main content */
+/* Content (push right by sidebar width) */
 .content {
+  margin-left: 240px;
   flex: 1;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  background: #fff;
+  transition: margin-left 0.3s ease;
 }
 
-/* Centered header */
+/* Header */
 .content-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90px;
+  height: 80px;
+  background: #f1f3f6;
+  border-bottom: 1px solid #ddd;
 }
 
 .content-header h2 {
-  font-size: 1.8rem;
-  color:  #2c3e50;
-  text-align: center;
+  font-size: 1.6rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Body */
+.content-body {
+  flex: 1;
+  padding: 20px;
+  background: #fafafa;
+}
+
+/* Mobile: sidebar = 10% of screen */
+@media (max-width: 600px) {
+  .sidebar {
+    width: 30vw;
+    /* 10% of viewport width */
+    padding: 10px 5px;
+    align-items: center;
+    /* center icons/text */
+  }
+
+  .content {
+    margin-left: 10vw;
+  }
+
+  .sidebar h1 {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  .sidebar nav ul li a {
+    font-size: 0.7rem;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+    /* avoid wrapping */
+  }
+
+  .sidebar .signout-btn {
+    padding: 8px;
+    font-size: 0.7rem;
+  }
 }
